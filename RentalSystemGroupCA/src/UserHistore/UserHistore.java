@@ -1,6 +1,9 @@
 package UserHistore;
 
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -11,7 +14,8 @@ import java.util.Queue;
 
 /**
 *
-*@author Enio Kelsio
+* @author Enio Kelsio
+* @student n. 2021221
 *
 **/
 
