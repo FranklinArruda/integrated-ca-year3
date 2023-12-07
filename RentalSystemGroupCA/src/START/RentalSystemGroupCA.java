@@ -7,7 +7,6 @@ import UserValidation.UserValidation;
 
 public class RentalSystemGroupCA {
     
-    UserHistory userHistory = new UserHistory(); // ENIO? this line should't be here. 
     
     public static void main(String[] args) throws IOException {
         
