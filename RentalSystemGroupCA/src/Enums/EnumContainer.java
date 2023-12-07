@@ -23,28 +23,28 @@ public class EnumContainer {
         MORNING {   
         @Override
         public String toString(){
-        return "Hi there," + "\n" + "Good morning!" + "\n"; // It creates a new line
+        return "Hello there," + "\n" + "Good morning!" + "\n"; // It creates a new line
+      }
+    },
+      
+        NOON {  
+        @Override
+        public String toString(){
+        return "Hello there," + "\n" + "Good noon!" + "\n"; 
       }
     },
         
         AFTERNOON {
         @Override
         public String toString(){
-        return "Hi there," + "\n" + "Good afternoon!" + "\n"; 
-      }
-    },
-          
-        NOON {  
-        @Override
-        public String toString(){
-        return "Hi there," + "\n" + "Good afternoon!" + "\n"; 
+        return "Hello there," + "\n" + "Good afternoon!" + "\n"; 
       }
     },
             
         EVENING {    
         @Override
         public String toString(){
-        return "Hi there," + "\n" + "Good afternoon!" + "\n"; 
+        return "Hello there," + "\n" + "Good evening!" + "\n"; 
       }
     },
   }
