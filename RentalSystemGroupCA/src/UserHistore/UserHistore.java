@@ -1,4 +1,4 @@
-package UserHistory;
+package UserHistore;
 
 
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import java.util.Queue;
 *
 **/
 
-public class UserHistory {
+public class UserHistore {
     private final Map<String, Integer> rentedFilms = new HashMap<>();
     private final Queue<Map<String, Integer>> pastRentedFilms = new LinkedList<>();
 
