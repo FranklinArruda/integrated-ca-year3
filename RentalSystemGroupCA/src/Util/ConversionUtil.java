@@ -8,15 +8,15 @@ import java.time.Duration;
 
 /**
  *
- * @author diego
- * 
+ * @author: Diego Ydalgo Jensen Francisco
+ * @student no.: 2021336
+ *  
  * Note that this class has been created inside a package to kept converters, calculators
  * and other utilities following "best practices" recommendations and intended to separate the concerns.
  * 
  * It can be used in a upgrade if, for example, the parental control and other ratings
  * regulations if it needs to be adapted for other countries legislation.
- * 
- * 
+ *  
  */
 public class ConversionUtil {
     

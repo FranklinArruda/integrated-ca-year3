@@ -8,7 +8,8 @@ import java.time.Duration;
 
 /**
  *
- * @author diego
+ * @author: Diego Ydalgo Jensen Francisco
+ * @student no.: 2021336
  */
 public class Film {
     private final int id;
@@ -30,6 +31,8 @@ public class Film {
         this.genre = genre;
     }
 
+    // IDE generated Getters
+    
     public int getId() {
         return id;
     }

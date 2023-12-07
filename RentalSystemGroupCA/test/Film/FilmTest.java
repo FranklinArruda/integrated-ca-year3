@@ -9,12 +9,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
- * @author diego
+ * @author: Diego Ydalgo Jensen Francisco
+ * @student no.: 2021336
  */
 public class FilmTest {
     
     @Test
-    public void testFilm(){
+    public void testFilmCreation(){
         Film film = new Film(1, "The Test", 2023, "Francis For Testolla", Duration.ofHours(2), "PG", "Testing");
         assertNotNull(film);
         assertEquals(1, film.getId());

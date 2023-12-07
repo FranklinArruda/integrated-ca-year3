@@ -14,7 +14,8 @@ import java.util.List;
 
 /**
  *
- * @author diego
+ * @author: Diego Ydalgo Jensen Francisco
+ * @student no.: 2021336
  */
 public class CSVReader {
 
