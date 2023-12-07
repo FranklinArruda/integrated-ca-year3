@@ -70,6 +70,8 @@ public class EnumContainer {
     
     
     // another class 
+    
+    
 }
 
 
