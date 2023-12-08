@@ -1,16 +1,16 @@
-ID,Title,Year,Director,Duration,Parental,Genre
-1,Se7en,1995,David Fincher,02:07:00,18,thriller
-2,The Silence of the Lambs,1991,Jonathan Demme,01:58:00,18,thriller
-3,Fight Club,1999,David Fincher,02:19:00,18,drama
-4,Red Dragon,2002,Brett Ratner,02:04:00,15,thriller
-5,Monty Python and the Holy Grail,1975,Terry Gillian,01:31:00,12A,comedy
-6,Jurassic Park,1993,Steven Spielberg,02:07:00,PG,adventure
-7,Indiana Jones and the Last Crusade,1989,Steven Spielberg,02:07:00,PG,adventure
-8,Amadeus,1984,Milos Forman,02:40:00,PG,drama
-9,Bram Stoker's Dracula,1992,Francis Ford Coppola,02:08:00,18,horror
-10,Interview whith the Vampire,1994,Neil Jordan,02:03:00,18,horror
-11,In the Name of the Father,1993,Jim Sheridan,02:13:00,15,drama
-12,My Left Foot,1989,Jim Sheridan,01:43:00,15,biopic
-13,The Banshees of Inisherin,2022,Martin McDonagh,01:54:00,15,comedy
-14,Angela's Ashes,1999,Alan Parker,02:25:00,15,biopic
-15,Belfast,2021,Kenneth Branagh,01:38:00,12A,autobiopic
+id,title,year,director,runtime,parental,genre,price,endorsements
+1,Se7en,1995,David Fincher,127,18,thriller,7.00,116
+2,The Silence of the Lambs,1991,Jonathan Demme,118,18,thriller,6.00,215
+3,Fight Club,1999,David Fincher,139,18,drama,7.00,989
+4,Red Dragon,2002,Brett Ratner,124,15,thriller,7.00,846
+5,Monty Python and the Holy Grail,1975,Terry Gillian,91,12A,comedy,5.00,401
+6,Jurassic Park,1993,Steven Spielberg,127,PG,adventure,6.00,477
+7,Indiana Jones and the Last Crusade,1989,Steven Spielberg,127,PG,adventure,6.00,508
+8,Amadeus,1984,Milos Forman,160,PG,drama,5.00,894
+9,Bram Stoker's Dracula,1992,Francis Ford Coppola,128,18,horror,6.00,774
+10,Interview whith the Vampire,1994,Neil Jordan,123,18,horror,6.00,492
+11,In the Name of the Father,1993,Jim Sheridan,133,15,drama,6.00,761
+12,My Left Foot,1989,Jim Sheridan,103,15,biopic,5.00,505
+13,The Banshees of Inisherin,2022,Martin McDonagh,114,15,comedy,7.00,836
+14,Angela's Ashes,1999,Alan Parker,145,15,biopic,6.00,835
+15,Belfast,2021,Kenneth Branagh,138,12A,autobiopic,7.00,999

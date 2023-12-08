@@ -11,29 +11,32 @@ import org.junit.jupiter.api.Test;
 
 /**
  *
- * @author diego
+ * @author Diego Ydalgo Jensen Francisco
+ * @student no.: 2021336
  */
 public class ConversionUtilTest {
+    
+    // Check the /util/ConversionUnitTest.java for more information
 
-    @Test
-    void testParseValidDuration() {
-        Duration expected = Duration.ofHours(2).plusMinutes(30);
-        Duration actual = ConversionUtil.parseDuration("2:30");
-        assertEquals(expected, actual, "Parsing 2:30 should return a duration of 2 hours and 30 minutes");
-    }
-
-    @Test
-    void testParseEdgeCaseDuration() {
-        Duration expected = Duration.ofHours(0);
-        Duration actual = ConversionUtil.parseDuration("0:00");
-        assertEquals(expected, actual, "Parsing 0:00 should return a duration of 0 hours");
-    }
-
-    @Test
-    void testParseInvalidDuration() {
-        assertThrows(NumberFormatException.class, () -> ConversionUtil.parseDuration("abc"),
-                     "Parsing an invalid duration string should throw a NumberFormatException");
-    }
+//    @Test
+//    void testParseValidDuration() {
+//        Duration expected = Duration.ofHours(2).plusMinutes(30);
+//        Duration actual = ConversionUtil.parseDuration("2:30");
+//        assertEquals(expected, actual, "Parsing 2:30 should return a duration of 2 hours and 30 minutes");
+//    }
+//
+//    @Test
+//    void testParseEdgeCaseDuration() {
+//        Duration expected = Duration.ofHours(0);
+//        Duration actual = ConversionUtil.parseDuration("0:00");
+//        assertEquals(expected, actual, "Parsing 0:00 should return a duration of 0 hours");
+//    }
+//
+//    @Test
+//    void testParseInvalidDuration() {
+//        assertThrows(NumberFormatException.class, () -> ConversionUtil.parseDuration("abc"),
+//                     "Parsing an invalid duration string should throw a NumberFormatException");
+//    }
 
     // You can add more test cases as needed
 }

@@ -18,15 +18,21 @@ import java.time.Duration;
  * regulations if it needs to be adapted for other countries legislation.
  *  
  */
+
 public class ConversionUtil {
     
-    public static Duration parseDuration(String durationStr){
-        String[] parts = durationStr.split(":");
-        int hours = Integer.parseInt(parts[0]);
-        int minutes = Integer.parseInt(parts[1]);
-        return Duration.ofHours(hours).plusMinutes(minutes);
-        
-    }
+    /**
+    * This method have been commented out by the author since it is not being used for sake of simplicity,
+    * time units related to the duration will be given in minutes for this prototype.
+    * 
+    */
+//    public static Duration parseDuration(String durationStr){
+//        String[] parts = durationStr.split(":");
+//        int hours = Integer.parseInt(parts[0]);
+//        int minutes = Integer.parseInt(parts[1]);
+//        return Duration.ofHours(hours).plusMinutes(minutes);
+//        
+//    }
     
     // There's space here for other utilities methods
     
