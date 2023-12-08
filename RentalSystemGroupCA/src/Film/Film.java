@@ -36,6 +36,10 @@ public class Film {
         this.endorsements = endorsements;
     }
 
+    public Film() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
     // IDE generated Getters
     public int getId() {
         return id;
