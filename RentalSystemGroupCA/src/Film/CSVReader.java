@@ -4,11 +4,9 @@
  */
 package Film;
 
-import static Util.ConversionUtil.parseDuration;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,11 +31,16 @@ public class CSVReader {
                String title = fields[1];
                int year = Integer.parseInt(fields[2]);
                String director = fields[3];
-               Duration duration = parseDuration(fields[4]);
+               int runtime = Integer.parseInt(fields[4]);
+//             Duration duration = parseDuration(fields[4]);
                String parental = fields[5];
                String genre = fields[6];
+               double price = Double.parseDouble(fields[7]);
+               int endorsements = Integer.parseInt(fields[8]);
                
-               Film film = new Film(id, title, year, director, duration, parental, genre);
+               
+               Film film = new Film(id, title, year, director, runtime,
+                       parental, genre, price, endorsements);
                films.add(film);
            }
         } catch (Exception e) {

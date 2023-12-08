@@ -16,7 +16,7 @@ public class FilmTest {
     
     @Test
     public void testFilmCreation(){
-        Film film = new Film(1, "The Test", 2023, "Francis For Testolla", Duration.ofHours(2), "PG", "Testing");
+        Film film = new Film(1, "The Test", 2023, "Francis For Testolla", 2, "PG", "Testing", 0, 0);
         assertNotNull(film);
         assertEquals(1, film.getId());
         assertEquals("The Test", film.getTitle());
