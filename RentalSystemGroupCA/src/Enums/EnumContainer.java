@@ -69,9 +69,16 @@ public class EnumContainer {
     }
     
     
-    // another class 
-    
-    
+    /**
+     * Initialize the System
+     * user menu that is displayed in the main using for loop to read it through.
+     * Example taken from class lecture
+     */
+    public enum userMenu{
+        REGISTER,
+        LOGIN,
+        EXIT
+    } 
 }
 
 

@@ -1,12 +1,11 @@
 
-package UserValidation;
+package User;
 
 /**
  * Student Name: Franklin Arruda Cirino
  * Student No.: 2021368
  */
-
-public interface UserValidationInterface {
+public interface userValidationInterface {
     
     /**
      * Get some text from the user (via keyboard)
@@ -31,6 +30,8 @@ public interface UserValidationInterface {
      * @return the email Confirmed variable 
      */
      public String validatePassword(String password, String confirmPass);
-    
+     
+
+     
     
 }

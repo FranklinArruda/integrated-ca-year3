@@ -1,6 +1,5 @@
 
-package User_Getters_Setters;
-
+package User;
 /**
  * Student Name: Franklin Arruda Cirino
  * Student No.: 2021368
@@ -37,4 +36,5 @@ public class User {
     public String getUserEmail() {
         return userEmail;
     }    
-}
+  }
+

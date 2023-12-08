@@ -1,17 +1,15 @@
 
-package UserValidation;
+package User;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-
-
 /**
  * Student Name: Franklin Arruda Cirino
  * Student No.: 2021368
  */
-public class UserValidation implements UserValidationInterface{
+public class userValidation implements userValidationInterface{
 
     // global BufferedReader to void having to call it many times.
-    static final BufferedReader myKeyboard = new BufferedReader(new InputStreamReader(System.in));
+    public static  BufferedReader myKeyboard = new BufferedReader(new InputStreamReader(System.in));
    
      @Override
      public String validateUserName (String userPrompt){
@@ -44,7 +42,7 @@ public class UserValidation implements UserValidationInterface{
 
             //userInput must be text now
             return (userInput);
-    }
+    };
     
    
     @Override
@@ -69,18 +67,18 @@ public class UserValidation implements UserValidationInterface{
                emailCheck = false;
                
                System.out.println("\n");
-               System.err.println("You must enter a VALID email, and both must macth. Please try again!");
+               System.out.println("You must enter a VALID email, and both must macth. Please try again!");
                System.out.println("> Exemple: franklin@student.cct.ie");
-               System.out.println("> Matches: franklin@student.cct.ie" + "\n");
+               System.out.println("> Match: franklin@student.cct.ie" + "\n");
             }
             
             }catch(Exception e){
                 System.err.println("Sorry! Something went wrong");
             }
             
-        } while (!userEmail.equals(confirmEmail)); //&& (!email.contains("@")));
+        } while (!userEmail.equals(confirmEmail));
         return confirmEmail;
-    }
+    };
     
     
     @Override
@@ -116,6 +114,6 @@ public class UserValidation implements UserValidationInterface{
         
         // return userPASS
         return confirmUserPass;        
-    }
+    };
 }
   
