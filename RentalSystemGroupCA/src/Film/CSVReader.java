@@ -27,6 +27,11 @@ public class CSVReader {
            while ((line = reader.readLine()) != null) {
                String[] fields = line.split(",");
                // Parse fields and create a new Film object
+               if (fields.length != 9) {
+                   // To check the number of headers
+                   continue;
+                }
+               // To check the Data inside tthe file
                int id = Integer.parseInt(fields[0]);
                String title = fields[1];
                int year = Integer.parseInt(fields[2]);
