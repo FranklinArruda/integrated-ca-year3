@@ -32,7 +32,7 @@ public class RentalSystem {
 
     public void loginUser(String email, String password) {
         // Assume userHandler has a method to authenticate users
-        User user = userHandler.authenticateUser(email, password);
+        User user = userHandler.userLogin(email, password);
         if (user != null) {
             this.currentUser = user;
             System.out.println("Login successful. Welcome " + user.getUserName());
