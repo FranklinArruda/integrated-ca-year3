@@ -6,7 +6,9 @@ package UserHistoric;
 
 /**
  *
- * @author eniomagalhaes
+ * @author Enio Kelsio
+ * @student n. 2021221
+ * 
  */
 class RentedFimRecord {
     
