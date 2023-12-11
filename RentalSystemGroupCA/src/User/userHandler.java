@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Student Name: Franklin Arruda Cirino
@@ -84,92 +86,48 @@ public class userHandler implements userHandlerInterface {
     }
 
     @Override
-    public String userLogin() {
-        
+   public User userLogin(String userEmail, String userPass) {
+           /*
+            The following if statement Create an object from User class
+            and assigns the retrievedUser object to my map userMap.get 
+            that checks the email. 
+            */
+        User retrievedUser = userMap.get(userEmail);
+        if (retrievedUser != null && retrievedUser.getPassWord() != null && retrievedUser.getPassWord().equals(userPass)) {
+            System.out.println("Welcome, " + retrievedUser.getUserName());
+            return retrievedUser;
+            
+        } else {
+            System.out.println("Login failed. User not found or incorrect password.\n");
+            return null;
+        }
+   } 
+   
+    
+     public void handleLogin() {
         try {
-            // Prompt user for email
+            // Prompt user for email and password or obtain them from some source
             System.out.print("Enter your email: ");
             String userEmail = myKeyboard.readLine();
             
             System.out.print("Enter your password: ");
             String userPass = myKeyboard.readLine();
             
-            /*
-            The following if statement Create an object from User class
-            and assigns the retrievedUser object to my map userMap.get 
-            that checks the email. 
-            */
-           
-           User retrievedUser = userMap.get(userEmail);
-           if (retrievedUser != null && retrievedUser.getPassWord() != null && retrievedUser.getPassWord().equals(userPass)) {
-                System.out.println("Welcome, " + retrievedUser.getUserName());
+            // will use the return type object USER here
+            // using this method you can call user using getter method since the user is stored in the hash map
+            User loggedInUser = userLogin(userEmail, userPass);
+            
+            if (loggedInUser != null) {
+                // getting the user
+                System.out.println("Logged in user: " + loggedInUser.getUserName());
                 
-                // call userMene
-                userHandler RentalMovieMenu = new userHandler();
-                RentalMovieMenu.userMenu(); 
-                return "success";
+                // here guys you use this method
                 
             } else {
-                System.out.println("Login failed. User not found or incorrect password.\n");
-                return "failure";
-            }
+                System.out.println("UserName or password wrong!");
+            } 
         } catch (IOException e) {
-            System.out.println("Something went wrong! Please try again!");
-            return "error";
-        }
-    }
-    
-    
-    @Override
-    public void userMenu(){
-       
-    try{ 
-        System.out.println("Welcome to Rental Movies Stores");
-        
-        System.out.println("CHOOSE ONE OF THE FOLLOWING OPTIONS:");
-        System.out.println("1: Rent a movie");
-        System.out.println("2: Movie history");
-        System.out.println("3: Return Movies");
-        System.out.println("4: EXIT");
-       
-        // get user input
-         int userOption = Integer.parseInt(myKeyboard.readLine().trim());
-        
-        // user validation menu Options below
-        switch (userOption){
-        
-            case 1:
-                // call rent movie method
-                // Testing purposes Only
-                System.out.println("You have successfully rented a movie");
-            break;
-            
-            case 2:
-                
-                // call rent movie history
-                //Testing Purposes oNly
-        
-                System.out.println("You have no movie history for the moment");
-                System.out.println("Please rent a movies first");
-                
-                // call rental movie here again
-                // use while loops to return the mothod and validate
-            break;
-            
-            case 3:
-                 // call return movies
-                // just a sample
-                System.out.println("movie has been returned successfully");
-            break;
-            
-            case 4:
-                System.out.println("Goodbye for now");
-                break;
-            default: // do nithing
-        }
-         
-    } catch(Exception e){
-            System.err.println("something went wrong! ");
+            System.out.println("Something went wrong!");
         }
     }
 }

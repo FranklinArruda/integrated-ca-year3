@@ -39,7 +39,7 @@ public interface userHandlerInterface {
   * If email exists and password associated with the email is true. Then, login is successful
   * 
  */
- public String userLogin();  
+ public User userLogin(String userEmail, String userPass);  
  
  
  /**
@@ -49,5 +49,5 @@ public interface userHandlerInterface {
   * User Historic
   * User Rental manager
   */
-  public void userMenu();
+ // public void userMenu(); NOT USEFUL
 }

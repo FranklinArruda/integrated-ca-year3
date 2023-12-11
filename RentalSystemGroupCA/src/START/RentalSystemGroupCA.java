@@ -42,15 +42,15 @@ public class RentalSystemGroupCA {
                     UserSessionManager.userGreetings();
                     UserSessionManager.userSignUp();
                     System.out.println("Please Enter your Credentials to Login: \n");
-                    UserSessionManager.userLogin();
+                    UserSessionManager.handleLogin();
                     break;
 
                 case 2:
-                     UserSessionManager.userLogin();
+                     UserSessionManager.handleLogin();
                      System.out.println("Please Resgiter Yourself: \n");
                       System.out.println("=========================");
                      UserSessionManager.userSignUp();
-                     UserSessionManager.userLogin();
+                     UserSessionManager.handleLogin();
                     break;
                     
                 case 3:
