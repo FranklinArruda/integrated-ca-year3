@@ -29,6 +29,10 @@ public class RentalSystemGroupCA {
          System.out.println( type + ": " + userMenu.values()[type-1]);
     }
     
+    
+   
+   
+    
     // get user input to choose the below options using Global BufferedReader myKeyboard object
     int userOption = Integer.parseInt(myKeyboard.readLine());
           
@@ -44,10 +48,10 @@ public class RentalSystemGroupCA {
                 case 2:
                      UserSessionManager.userLogin();
                      System.out.println("Please Resgiter Yourself: \n");
+                      System.out.println("=========================");
                      UserSessionManager.userSignUp();
                      UserSessionManager.userLogin();
                     break;
-                    
                     
                 case 3:
                     System.out.println("Goodbye for now!");
