@@ -40,5 +40,17 @@ public class Cart {
     }
     
     // Plenty of functions to be added
+
+    /**
+     *
+     * @return
+     */
+
+    public List<Film> getSelectedFilms() {
+        return selectedFilms;
+    }
+
+    
+    
     
 }
