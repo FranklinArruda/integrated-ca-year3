@@ -103,8 +103,9 @@ public class userHandler implements userHandlerInterface {
         }
    } 
    
-    
-     public void handleLogin() {
+   
+    @Override
+    public void handleLogin() {
         try {
             // Prompt user for email and password or obtain them from some source
             System.out.print("Enter your email: ");
@@ -118,6 +119,7 @@ public class userHandler implements userHandlerInterface {
             User loggedInUser = userLogin(userEmail, userPass);
             
             if (loggedInUser != null) {
+                
                 // getting the user
                 System.out.println("Logged in user: " + loggedInUser.getUserName());
                 

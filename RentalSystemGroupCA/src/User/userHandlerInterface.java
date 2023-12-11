@@ -41,13 +41,9 @@ public interface userHandlerInterface {
  */
  public User userLogin(String userEmail, String userPass);  
  
- 
- /**
-  * Once user has registered and successfully stored in the hash map.
-  * Rental movies Methods such as: 
-  * Film catalogue
-  * User Historic
-  * User Rental manager
-  */
- // public void userMenu(); NOT USEFUL
+/**
+ * It handles the user login for the rest of the functionalities such as Rental system etc
+ */
+public void handleLogin();
+
 }
