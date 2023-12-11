@@ -14,7 +14,7 @@ public class Film {
     private final String title;
     private final int year;
     private final String director;
-    private final int runtime;
+    private final int runtime; // in minutes
 //  private final Duration runtime; // specific type to be used for decribe a length of time
     private final String parental;
     private final String genre;

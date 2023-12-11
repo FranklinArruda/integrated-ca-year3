@@ -39,5 +39,15 @@ public interface userHandlerInterface {
   * If email exists and password associated with the email is true. Then, login is successful
   * 
  */
- public void userLogin();  
+ public String userLogin();  
+ 
+ 
+ /**
+  * Once user has registered and successfully stored in the hash map.
+  * Rental movies Methods such as: 
+  * Film catalogue
+  * User Historic
+  * User Rental manager
+  */
+  public void userMenu();
 }
