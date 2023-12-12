@@ -6,6 +6,7 @@
 package UserHistoric;
 
 import Film.Film;
+import Rental.Cart;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,26 +17,34 @@ import java.util.Map;
 * @author Enio Kelsio
 * @student n. 2021221
 *
+* UserHistoric class represents the rental history of a user.
 **/
 
 public class UserHistoric {
+    //List to store rented films.
     private final List<RentedFimRecord> rentedFilms = null;
-    private final ArrayList<Object> rentedFilma;
     
-    Film movie = new Film();
+    //List to store selected films to be rented or not
+    private final ArrayList<Object> selectedFilms;
+    
+   Cart movie = new Cart();
+    private final Film film;
 
     
     public UserHistoric() {
-        this.movie = new Film();
-        this.rentedFilma = new ArrayList <>();
+        this.film = new Film();
+        this.selectedFilms = new ArrayList <>();
     }
     
 
+    //Metod to add a rented film to the history
     public void addRentedFilm(Film film, int rentalDuration) {
         RentedFilmRecord record = new RentedFilmRecord(film, rentalDuration);
-        rentedFilma.add(record);
+        //Add the rented film to the selectesFilmas list
+        selectedFilms.add(record);
     }
 
+    //Method to get the most rented films in the last fiveminutes
     public List<Film> getMostRentedFilms() {
         // Assuming that the system keeps track of rentals and their durations
         // and updates the rentedFilms list accordingly.
@@ -47,8 +56,8 @@ public class UserHistoric {
 
         for (RentedFilmRecord record : filmsRentedInLastFiveMinutes) {
             Film seen = record.getFilm();
-            Object film = null;
-            filmRentCountMap.put((Film) film, filmRentCountMap.getOrDefault(film, 0) + 1);
+            Film films = record.getFilm();
+            filmRentCountMap.put((Film) films, filmRentCountMap.getOrDefault(films, 0) + 1);
         }
 
         filmRentCountMap.entrySet().stream()
@@ -60,12 +69,14 @@ public class UserHistoric {
         return new ArrayList<>(filmRentCountMap.keySet());
     }
 
+     //Method get rented films in the last five min
     private List<RentedFilmRecord> getFilmsRentedInLastFiveMinutes() {
-        // Implement logic to retrieve films rented in the last five minutes.
+    
         // For simplicity, return an empty list for now.
         return new ArrayList<>();
     }
 
+    //Inner class to represent a record of retend film
     private static class RentedFilmRecord {
         private final Film film;
         private final int rentalDuration; // in minutes
@@ -75,8 +86,9 @@ public class UserHistoric {
             this.rentalDuration = rentalDuration;
         }
 
+        //Getter method for the film
         private Film getFilm() {
-            throw new UnsupportedOperationException("Not supported yet.");
+           return film;
         }
     }
     
