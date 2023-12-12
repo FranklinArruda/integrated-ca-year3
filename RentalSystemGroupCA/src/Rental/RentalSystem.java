@@ -30,6 +30,10 @@ public class RentalSystem {
         this.userHandler = userHandler;
         this.currentCart = new Cart();
     }
+    
+    public void start(User user){
+        this.currentUser = user;
+    }
 
     public void loginUser(String email, String password) {
         // Assume userHandler has a method to authenticate users
