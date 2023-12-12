@@ -19,6 +19,7 @@ import User.userHandler;
  */
 public class RentalSystem {
     private userHandler userHandler;
+    private Catalog catalog;
     private User currentUser;
     private Cart currentCart;
 
@@ -26,8 +27,9 @@ public class RentalSystem {
      * The user handler used for authorizing the users to access the Films.
      * @param userHandler
      */
-    public RentalSystem(userHandler userHandler) {
+    public RentalSystem(userHandler userHandler, Catalog catalog) {
         this.userHandler = userHandler;
+        this.catalog = catalog;
         this.currentCart = new Cart();
     }
     
@@ -48,8 +50,12 @@ public class RentalSystem {
     }
     
     public void showCatalog(){
-    
-        System.out.println(currentUser.getUserName());
+        System.out.println("Avaiable Movies: ");
+        
+        for (Film film : catalog.getFilms()){
+            System.out.println("- " + film.getTitle() + " (" + film.getYear() + "), Genre: " + film.getGenre() 
+                    + ", Price: " + film.getPrice() + ", ID: " + film.getId());
+        }
     }
     
     public void addToCart(Film film){
@@ -63,5 +69,4 @@ public class RentalSystem {
         System.out.println(currentUser.getUserName());
     }
 
-    // Other methods like showCatalog, addToCart, checkout, etc.
 }

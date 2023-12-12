@@ -5,9 +5,13 @@ package START;
 import User.userHandler;
 import java.io.IOException;
 import Enums.EnumContainer.userMenu;
+import Film.CSVReader;
+import Film.Film;
+import Rental.Catalog;
 import Rental.RentalSystem;
 import User.User;
 import static User.userValidation.myKeyboard;
+import java.util.List;
 
 /**
  * Student Name: Franklin Arruda Cirino 
@@ -29,6 +33,19 @@ public class RentalSystemGroupCA {
 
         // user authentication, sign up and login Instance
         userHandler UserSessionManager = new userHandler();
+        
+        // To initialize and populate the catalog
+        CSVReader csvReader = new CSVReader();
+        List<Film> films = csvReader.readFilmsFromCSV();
+        
+        // Create and populate the catalog
+        Catalog catalog = new Catalog();
+        
+        for(Film film : films){
+            catalog.addFilm(film);
+        }
+        
+        // More TODO
 
         // for loop to Inerate Enums (Status)assigning type to -1 to count the Enums
         // exemple taken from class lecture
@@ -50,7 +67,8 @@ public class RentalSystemGroupCA {
                 // User chooses to log in
                 User loggedInUser = UserSessionManager.handleLogin();
                 if (loggedInUser != null) {
-                    RentalSystem rentalSystem = new RentalSystem(UserSessionManager);
+                    RentalSystem rentalSystem = new RentalSystem(UserSessionManager, catalog);
+                    rentalSystem.showCatalog(); // Show the movie catalog
                     // Assuming RentalSystem has a start method that takes User as a parameter
                     rentalSystem.start(loggedInUser);
                 } else {
