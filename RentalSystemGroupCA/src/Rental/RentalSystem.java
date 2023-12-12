@@ -4,6 +4,7 @@
  */
 package Rental;
 
+import Film.Film;
 import User.User;
 import User.userHandler;
 
@@ -40,6 +41,22 @@ public class RentalSystem {
         } else {
             System.out.println("Login failed. Please try again.");
         }
+    }
+    
+    public void showCatalog(){
+    
+        System.out.println(currentUser.getUserName());
+    }
+    
+    public void addToCart(Film film){
+        currentCart.addFilm(film);
+        System.out.println(film.getTitle());
+    }
+    
+    public void checkout(){
+        Checkout checkoutProcess = new Checkout();
+        checkoutProcess.processCheckout(currentCart);
+        System.out.println(currentUser.getUserName());
     }
 
     // Other methods like showCatalog, addToCart, checkout, etc.
