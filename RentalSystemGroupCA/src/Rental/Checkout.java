@@ -13,15 +13,17 @@ import java.time.format.DateTimeFormatter;
  *
  * @author Diego Ydalgo Jensen Francisco
  * @student id.: 2021336
- * 
- * This is intended to be used for checkout system commonly implemented in Web rentals.
- * Methods for calculate duration of the rental and others related features will be stored here.
- * 
+ *
+ * This is intended to be used for checkout system commonly implemented in Web
+ * rentals. Methods for calculate duration of the rental and others related
+ * features will be stored here.
+ *
  */
 public class Checkout {
-    
+
     /**
      * Cart containing the films selected and ready to be rent.
+     *
      * @param cart
      */
     public void processCheckout(Cart cart) {
@@ -36,11 +38,18 @@ public class Checkout {
             LocalDateTime now = LocalDateTime.now();
             writer.write("Transaction Date: " + now.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) + "\n");
             writer.write("Movies Rented: \n");
+            
+            double total = 0;
             for (Film film : cart.getSelectedFilms()) {
-                writer.write(film.getTitle() + "\n");
-                // Include other details as needed
+                writer.write(film.getTitle() + " - Price: €" 
+                        + film.getPrice() + "\n");
+                total += film.getPrice();
+            
             }
-            // Include other receipt details
+            
+            // To print the total price
+            writer.write("\nTotal Price: €" 
+                    + String.format("%.2f", total) + "\n");
         } catch (Exception e) {
             e.printStackTrace();
         }

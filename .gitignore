@@ -8,3 +8,4 @@ RentalSystemGroupCA/nbproject/project.properties
 RentalSystemGroupCA/nbproject/genfiles.properties
 RentalSystemGroupCA/nbproject/project.properties
 RentalSystemGroupCA/src/Film/Movie_Metadata.csv
+*.txt

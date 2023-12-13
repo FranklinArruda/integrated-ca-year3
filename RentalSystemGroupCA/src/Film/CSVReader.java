@@ -17,37 +17,40 @@ import java.util.List;
  */
 public class CSVReader {
 
-    public List<Film> readFilmsFromCSV(){
+    /**
+     * Will read the lines present on the CSV.
+     *
+     * @return
+     */
+    public List<Film> readFilmsFromCSV() {
         List<Film> films = new ArrayList<>();
-        try (InputStream is = getClass().getResourceAsStream("/Film/ica_filmotech.csv");
-             BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
-           
-           String line;
-           reader.readLine(); // Skip the header line
-           while ((line = reader.readLine()) != null) {
-               String[] fields = line.split(",");
-               // Parse fields and create a new Film object
-               if (fields.length != 9) {
-                   // To check the number of headers
-                   continue;
+        try (InputStream is = getClass().getResourceAsStream("/Film/ica_filmotech.csv"); BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
+
+            String line;
+            reader.readLine(); // Skip the header line
+            while ((line = reader.readLine()) != null) {
+                String[] fields = line.split(",");
+                // Parse fields and create a new Film object
+                if (fields.length != 9) {
+                    // To check the number of headers
+                    continue;
                 }
-               // To check the Data inside tthe file
-               int id = Integer.parseInt(fields[0]);
-               String title = fields[1];
-               int year = Integer.parseInt(fields[2]);
-               String director = fields[3];
-               int runtime = Integer.parseInt(fields[4]);
+                // To check the Data inside tthe file
+                int id = Integer.parseInt(fields[0]);
+                String title = fields[1];
+                int year = Integer.parseInt(fields[2]);
+                String director = fields[3];
+                int runtime = Integer.parseInt(fields[4]);
 //             Duration duration = parseDuration(fields[4]);
-               String parental = fields[5];
-               String genre = fields[6];
-               double price = Double.parseDouble(fields[7]);
-               int endorsements = Integer.parseInt(fields[8]);
-               
-               
-               Film film = new Film(id, title, year, director, runtime,
-                       parental, genre, price, endorsements);
-               films.add(film);
-           }
+                String parental = fields[5];
+                String genre = fields[6];
+                double price = Double.parseDouble(fields[7]);
+                int endorsements = Integer.parseInt(fields[8]);
+
+                Film film = new Film(id, title, year, director, runtime,
+                        parental, genre, price, endorsements);
+                films.add(film);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
