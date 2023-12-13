@@ -20,10 +20,18 @@ public class Catalog {
         this.films = new ArrayList<>();
     }
 
+    /**
+     *
+     * @param film
+     */
     public void addFilm(Film film) {
         films.add(film);
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Film> getFilms() {
         return films;
     }

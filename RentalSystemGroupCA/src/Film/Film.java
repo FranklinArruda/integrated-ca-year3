@@ -23,7 +23,7 @@ public class Film {
 
     // IDE generated Constructors
     public Film(int id, String title, int year, String director, int runtime, String parental, String genre, double price, int endorsements) {
-        // note that the type for runtime has been changed to 'int' keep it simple 
+        // note that the type for runtime has been changed to 'int'. KISS! 
         this.id = id;
         this.title = title;
         this.year = year;
@@ -41,39 +41,76 @@ public class Film {
     }
 
     // IDE generated Getters
+
+    /**
+     *
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getTitle() {
         return title;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getYear() {
         return year;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDirector() {
         return director;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getRuntime(){
 //  public Duration getDuration() { // Atempt to simplify the type, the runtime has been changed to 'int'
         return runtime;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getParental() {
         return parental;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getGenre() {
         return genre;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getPrice() {
         return price;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getEndorsements() {
         return endorsements;
     }

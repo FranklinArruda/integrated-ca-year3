@@ -36,10 +36,19 @@ public class RentalSystem {
         this.currentCart = new Cart();
     }
 
+    /**
+     *
+     * @param user
+     */
     public void start(User user) {
         this.currentUser = user;
     }
 
+    /**
+     *
+     * @param email
+     * @param password
+     */
     public void loginUser(String email, String password) {
         // Assume userHandler has a method to authenticate users
         User user = userHandler.userLogin(email, password);
@@ -52,8 +61,11 @@ public class RentalSystem {
         }
     }
 
+    /**
+     *
+     */
     public void showCatalog() {
-        System.out.println("Avaiable Movies: ");
+        System.out.println("\nAvaiable Movies: ");
 
         for (Film film : catalog.getFilms()) {
             System.out.println("- " + film.getTitle() + " (" + film.getYear() + "), Genre: " + film.getGenre()
@@ -61,12 +73,15 @@ public class RentalSystem {
         }
     }
 
+    /**
+     *
+     */
     public void selectFilm() {
         Scanner scanner = new Scanner(System.in);
         boolean addingMore = true;
 
         while (addingMore) {
-            System.out.println("Enter ID of the Film you want to rent: ");
+            System.out.print("\nEnter ID of the Film you want to rent: ");
             int filmId = scanner.nextInt();
 
             if (filmId == 0) {
@@ -77,19 +92,30 @@ public class RentalSystem {
             //
             Film selectedFilm = catalog.getFilmById(filmId);
             if (selectedFilm != null) {
-                currentCart.addFilm(selectedFilm);
-                System.out.println(selectedFilm.getTitle() + " added.\n");
+                if (currentCart.addFilm(selectedFilm)) {
+                    System.out.println(selectedFilm.getTitle() + " added.\n");
+                } else {
+                    System.out.println(selectedFilm.getTitle()
+                            + " is already in you cart.\n");
+                }
             } else {
                 System.out.println("Film not found.");
             }
         }
     }
 
+    /**
+     *
+     * @param film
+     */
     public void addToCart(Film film) {
         currentCart.addFilm(film);
         System.out.println(film.getTitle());
     }
 
+    /**
+     *
+     */
     public void checkout() {
         if (currentCart.getSelectedFilms().isEmpty()) {
             System.out.println("Empty cart;");

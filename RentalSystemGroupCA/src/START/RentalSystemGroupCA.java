@@ -29,6 +29,11 @@ import java.util.List;
  */
 public class RentalSystemGroupCA {
 
+    /**
+     *
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
 
         // user authentication, sign up and login Instance
