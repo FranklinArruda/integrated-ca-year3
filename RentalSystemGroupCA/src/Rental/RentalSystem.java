@@ -63,16 +63,25 @@ public class RentalSystem {
 
     public void selectFilm() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter ID of the Fikm you want to rent: ");
-        int filmId = scanner.nextInt();
+        boolean addingMore = true;
 
-        //
-        Film selectedFilm = catalog.getFilmById(filmId);
-        if (selectedFilm != null) {
-            currentCart.addFilm(selectedFilm);
-            System.out.println(selectedFilm.getTitle() + " added.");
-        } else {
-            System.out.println("Film not found.");
+        while (addingMore) {
+            System.out.println("Enter ID of the Film you want to rent: ");
+            int filmId = scanner.nextInt();
+
+            if (filmId == 0) {
+                addingMore = false;
+                continue;
+            }
+
+            //
+            Film selectedFilm = catalog.getFilmById(filmId);
+            if (selectedFilm != null) {
+                currentCart.addFilm(selectedFilm);
+                System.out.println(selectedFilm.getTitle() + " added.\n");
+            } else {
+                System.out.println("Film not found.");
+            }
         }
     }
 

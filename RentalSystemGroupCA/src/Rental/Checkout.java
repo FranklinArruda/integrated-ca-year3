@@ -38,11 +38,18 @@ public class Checkout {
             LocalDateTime now = LocalDateTime.now();
             writer.write("Transaction Date: " + now.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) + "\n");
             writer.write("Movies Rented: \n");
+            
+            double total = 0;
             for (Film film : cart.getSelectedFilms()) {
-                writer.write(film.getTitle() + "\n");
-                // Include other details as needed
+                writer.write(film.getTitle() + " - Price: €" 
+                        + film.getPrice() + "\n");
+                total += film.getPrice();
+            
             }
-            // Include other receipt details
+            
+            // To print the total price
+            writer.write("\nTotal Price: €" 
+                    + String.format("%.2f", total) + "\n");
         } catch (Exception e) {
             e.printStackTrace();
         }
