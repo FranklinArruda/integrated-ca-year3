@@ -81,7 +81,8 @@ public class RentalSystem {
         boolean addingMore = true;
 
         while (addingMore) {
-            System.out.print("\nEnter ID of the Film you want to rent: ");
+            System.out.print("\nEnter ID of the Film you want to add to the cart "
+                    + "or 0 to checkout: ");
             int filmId = scanner.nextInt();
 
             if (filmId == 0) {

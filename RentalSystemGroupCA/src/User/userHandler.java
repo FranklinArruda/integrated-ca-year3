@@ -1,11 +1,13 @@
 package User;
 
 import Enums.EnumContainer;
+import Management.UserDataManager;
 import static User.userValidation.myKeyboard;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Student Name: Franklin Arruda Cirino 
@@ -14,10 +16,13 @@ import java.util.HashMap;
 public class userHandler implements userHandlerInterface {
 
     private HashMap<String, User> userMap; // hash map to store the user Credentials
+    private UserDataManager userDataManager;
 
     // Constructor
-    public userHandler() {
-        this.userMap = new HashMap<>(); // initializing the hash map
+    // Updated to fit the requirements related to persistence of user's data
+    public userHandler(Map<String, User> loadedUsers, UserDataManager userDataManager) {
+        this.userMap = new HashMap<>(loadedUsers); // initializing the hash map
+        this.userDataManager = userDataManager; // setting the instance to be retrieved
     }
 
     @Override
@@ -44,7 +49,6 @@ public class userHandler implements userHandlerInterface {
 
     @Override
     public void userSignUp() {
-
         //Imports user validation class
         userValidation validate = new userValidation();
 
@@ -67,7 +71,14 @@ public class userHandler implements userHandlerInterface {
             userCredentials.setUserEmail(userEmail);
             userCredentials.setPassWord(userPassword);
             userMap.put(userEmail, userCredentials);
-            System.out.println("User registered Successfully! \n");
+            
+            // Changes made to register the User's data to be retrieved
+            try {
+                userDataManager.saveUser(userCredentials);
+                System.out.println("User registered Successfully! \n");
+            } catch (IOException e) {
+                System.out.println("Error saving user data: " + e.getMessage());
+            }
         }
 
     }

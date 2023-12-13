@@ -7,11 +7,13 @@ import java.io.IOException;
 import Enums.EnumContainer.userMenu;
 import Film.CSVReader;
 import Film.Film;
+import Management.UserDataManager;
 import Rental.Catalog;
 import Rental.RentalSystem;
 import User.User;
 import static User.userValidation.myKeyboard;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Student Name: Franklin Arruda Cirino 
@@ -36,62 +38,70 @@ public class RentalSystemGroupCA {
      */
     public static void main(String[] args) throws IOException {
 
-        // user authentication, sign up and login Instance
-        userHandler UserSessionManager = new userHandler();
-        
-        // To initialize and populate the catalog
-        CSVReader csvReader = new CSVReader();
-        List<Film> films = csvReader.readFilmsFromCSV();
-        
-        // Create and populate the catalog
-        Catalog catalog = new Catalog();
-        
-        for(Film film : films){
-            catalog.addFilm(film);
-        }
-        
-        // More TODO
+        try {
+            // To access the Data Manager for retrieving and storing the users
+            UserDataManager userDataManager = new UserDataManager();
+            Map<String, User> users = userDataManager.loadUsers();
 
-        // for loop to Inerate Enums (Status)assigning type to -1 to count the Enums
-        // exemple taken from class lecture
-        for (int type = 1; type <= userMenu.values().length; type++) {
-            System.out.println(type + ": " + userMenu.values()[type - 1]);
-        }
+            // user authentication, sign up and login Instance
+            // Pass to this class the user and Data Manager instances
+            userHandler UserSessionManager = new userHandler(users, userDataManager);
 
-        // get user input to choose the below options using Global BufferedReader myKeyboard object
-        int userOption = Integer.parseInt(myKeyboard.readLine());
+            // To initialize and populate the catalog
+            CSVReader csvReader = new CSVReader();
+            List<Film> films = csvReader.readFilmsFromCSV();
 
-        // user option switch
-        switch (userOption) {
-            case 1:
-                // User chooses to sign up
-                UserSessionManager.userSignUp();
-            // Fall through to login after sign up
+            // Create and populate the catalog
+            Catalog catalog = new Catalog();
 
-            case 2:
-                // User chooses to log in
-                User loggedInUser = UserSessionManager.handleLogin();
-                if (loggedInUser != null) {
-                    RentalSystem rentalSystem = new RentalSystem(UserSessionManager, catalog);
-                    rentalSystem.showCatalog(); // Show the movie catalog
-                    rentalSystem.selectFilm(); // Select film
-                    rentalSystem.checkout(); // Aditional selection or checkout  
-                    
-                    // Assuming RentalSystem has a start method that takes User as a parameter
-                    rentalSystem.start(loggedInUser);
-                } else {
-                    System.out.println("Login failed. Unable to access rental system.");
-                }
-                break;
+            for (Film film : films) {
+                catalog.addFilm(film);
+            }
 
-            case 3:
-                // User chooses to exit
-                System.out.println("Goodbye for now!");
-                break;
+            // More TODO
+            // for loop to Inerate Enums (Status)assigning type to -1 to count the Enums
+            // exemple taken from class lecture
+            for (int type = 1; type <= userMenu.values().length; type++) {
+                System.out.println(type + ": " + userMenu.values()[type - 1]);
+            }
 
-            default:
-                // Invalid option handling
-                break;
+            // get user input to choose the below options using Global BufferedReader myKeyboard object
+            int userOption = Integer.parseInt(myKeyboard.readLine());
+
+            // user option switch
+            switch (userOption) {
+                case 1:
+                    // User chooses to sign up
+                    UserSessionManager.userSignUp();
+                // Fall through to login after sign up
+
+                case 2:
+                    // User chooses to log in
+                    User loggedInUser = UserSessionManager.handleLogin();
+                    if (loggedInUser != null) {
+                        RentalSystem rentalSystem = new RentalSystem(UserSessionManager, catalog);
+                        rentalSystem.showCatalog(); // Show the movie catalog
+                        rentalSystem.selectFilm(); // Select film
+                        rentalSystem.checkout(); // Aditional selection or checkout
+
+                        // Assuming RentalSystem has a start method that takes User as a parameter
+                        rentalSystem.start(loggedInUser);
+                    } else {
+                        System.out.println("Login failed. Unable to access rental system.");
+                    }
+                    break;
+
+                case 3:
+                    // User chooses to exit
+                    System.out.println("Goodbye for now!");
+                    break;
+
+                default:
+                    // Invalid option handling
+                    break;
+            }
+        } catch (IOException e) {
+            System.out.println("Error initializing user data: " + e.getMessage());
         }
     }
 }
