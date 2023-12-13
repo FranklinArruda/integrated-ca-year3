@@ -69,6 +69,9 @@ public class RentalSystemGroupCA {
                 if (loggedInUser != null) {
                     RentalSystem rentalSystem = new RentalSystem(UserSessionManager, catalog);
                     rentalSystem.showCatalog(); // Show the movie catalog
+                    rentalSystem.selectFilm(); // Select film
+                    rentalSystem.checkout(); // Aditional selection or checkout  
+                    
                     // Assuming RentalSystem has a start method that takes User as a parameter
                     rentalSystem.start(loggedInUser);
                 } else {

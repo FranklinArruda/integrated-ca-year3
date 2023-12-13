@@ -13,15 +13,17 @@ import java.time.format.DateTimeFormatter;
  *
  * @author Diego Ydalgo Jensen Francisco
  * @student id.: 2021336
- * 
- * This is intended to be used for checkout system commonly implemented in Web rentals.
- * Methods for calculate duration of the rental and others related features will be stored here.
- * 
+ *
+ * This is intended to be used for checkout system commonly implemented in Web
+ * rentals. Methods for calculate duration of the rental and others related
+ * features will be stored here.
+ *
  */
 public class Checkout {
-    
+
     /**
      * Cart containing the films selected and ready to be rent.
+     *
      * @param cart
      */
     public void processCheckout(Cart cart) {

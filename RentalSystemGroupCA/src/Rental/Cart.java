@@ -12,11 +12,12 @@ import java.util.List;
  *
  * @author Diego Ydalgo Jensen Francisco
  * @student id.: 2021336
- * 
+ *
  * Shopping cart for film rental containing common functions used in it.
- * 
+ *
  */
 public class Cart {
+
     private List<Film> selectedFilms;
 
     public Cart() {
@@ -25,32 +26,33 @@ public class Cart {
 
     /**
      * Adds a film to the cart.
-     * @param film 
+     *
+     * @param film
      */
     public void addFilm(Film film) {
         selectedFilms.add(film);
     }
-    
+
     /**
      * Removes a film from the cart.
+     *
      * @param film
      */
-    public void removeFilm(Film film){
+    public void removeFilm(Film film) {
         selectedFilms.remove(film);
     }
-    
-    // Plenty of functions to be added
 
+    // Plenty of functions to be added
     /**
      *
      * @return
      */
-
     public List<Film> getSelectedFilms() {
         return selectedFilms;
     }
 
-    
-    
-    
+    public void clearCart() {
+        selectedFilms.clear();
+    }
+
 }
