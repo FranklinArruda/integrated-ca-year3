@@ -21,8 +21,6 @@ import java.util.Map;
 **/
 
 public class UserHistoric {
-    //List to store rented films.
-    private final List<RentedFimRecord> rentedFilms = null;
     
     //List to store selected films to be rented or not
     private final ArrayList<Object> selectedFilms;
