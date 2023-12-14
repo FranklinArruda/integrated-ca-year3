@@ -3,10 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-package UserHistoric;
+package UserHistory;
 
 import Film.Film;
 import Rental.Cart;
+import Rental.RentalSystem;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,24 +21,25 @@ import java.util.Map;
 * UserHistoric class represents the rental history of a user.
 **/
 
-public class UserHistoric {
+public class UserHistory {
     
     //List to store selected films to be rented or not
     private final ArrayList<Object> selectedFilms;
     
+    RentalSystem rent = new RentalSystem();
    Cart movie = new Cart();
     private final Film film;
 
     
-    public UserHistoric() {
+    public UserHistory() {
         this.film = new Film();
         this.selectedFilms = new ArrayList <>();
     }
     
 
     //Metod to add a rented film to the history
-    public void addRentedFilm(Film film, int rentalDuration) {
-        RentedFilmRecord record = new RentedFilmRecord(film, rentalDuration);
+    public void addRentedFilm(Film film, int rentalSystem) {
+        RentedFilmRecord record = new RentedFilmRecord(film, rentalSystem);
         //Add the rented film to the selectesFilmas list
         selectedFilms.add(record);
     }

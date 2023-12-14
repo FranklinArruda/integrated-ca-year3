@@ -36,6 +36,10 @@ public class RentalSystem {
         this.currentCart = new Cart();
     }
 
+    public RentalSystem() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
     /**
      *
      * @param user
